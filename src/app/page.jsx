@@ -23,14 +23,14 @@ export default function Home() {
   return (
     <main className="mx-auto">
       <section className="relative w-full h-auto ">
-        <div>
+        <div className="relative">
           <Image
             src="/images/hero.png"
             alt="Hero"
             width={0}
             height={0}
             sizes="100vw"
-            className="md:w-full md:h-auto w-full h-[736px] mt-[80px] md:mt-[90px] lg:-mt-[80px]"
+            className="md:w-full md:h-auto w-full h-[736px] mt-[80px] md:mt-[90px] lg:-mt-[80px] object-cover"
           />
         </div>
 

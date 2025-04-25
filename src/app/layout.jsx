@@ -76,104 +76,115 @@ export default function RootLayout({ children }) {
             </div>
           </div>
           <nav className="flex justify-between p-5 z-10 relative items-center">
-            <div>
-              <Image
-                src="/images/logo3.png"
-                alt="logo3"
-                width={116}
-                height={38}
-              ></Image>
-            </div>
-            <div className="items-center gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden md:flex">
-              <Link href="/" className={linkClass("/")}>
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className={`flex items-center gap-2 ${linkClass("/about")}`}
-              >
-                About Us
-                <Image
-                  src="/images/Chevron_down.png"
-                  width={24}
-                  height={24}
-                ></Image>
-              </Link>
-              <Link
-                href="/services"
-                className={`flex items-center gap-2  ${linkClass("/services")}`}
-              >
-                Services
-                <Image
-                  src="/images/Chevron_down.png"
-                  width={24}
-                  height={24}
-                ></Image>
-              </Link>
-              <Link href="/contact" className={linkClass("/contact")}>
-                Contact Us
-              </Link>
-            </div>
-            <div className="flex items-center gap-8 mx-5">
-              <div>
-                <Image
-                  src="/images/Search_Magnifying_Glass.svg"
-                  alt="search icon"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <div className="flex items-center gap-4">
-                <div
-                  className="flex items-center border border-[#cdcdcd] rounded-2xl p-1 cursor-pointer"
-                  onClick={() => setShowDropdown(!showDropdown)}
-                >
-                  <Image
-                    src="/images/User_01.svg"
-                    alt="user"
-                    width={24}
-                    height={24}
-                  />
-                  <Image
-                    src="/images/Caret_Down_MD.svg"
-                    alt="search icon"
-                    width={24}
-                    height={24}
-                  />
-                </div>
+          <div className="relative w-[116px] h-[38px]">
+  <Image
+    src="/images/logo3.png"
+    alt="logo3"
+    width={116}
+    height={38}
+    className="object-cover w-full h-auto"
+  />
+</div>
 
-                {showDropdown && (
-                  <div
-                    ref={dropdownRef}
-                    className="absolute top-full mt-2 w-48 bg-white shadow-lg rounded-md z-50 right-20 transition duration-500 ease-in-out"
-                  >
-                    <ul className="p-2 text-sm">
-                      <li className="px-4 py-2 text-gray-400 text-[14px]">
-                        Credit Portal
-                      </li>
-                      <li className="px-4 py-2 hover:bg-green-200 transition duration-500 hover:rounded-lg  cursor-pointer">
-                        Admin Login
-                      </li>
-                      <li className="px-4 py-2 hover:bg-green-200 transition duration-500 hover:rounded-lg cursor-pointer">
-                        Credit Login
-                      </li>
-                    </ul>
-                  </div>
-                )}
+<div className="items-center gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden md:flex">
+  <Link href="/" className={linkClass("/")}>
+    Home
+  </Link>
+  <Link
+    href="/about"
+    className={`flex items-center gap-2 ${linkClass("/about")}`}
+  >
+    About Us
+    <Image
+      src="/images/Chevron_down.png"
+      alt="chevron"
+      width={24}
+      height={24}
+      className="w-[24px] h-auto"
+    />
+  </Link>
+  <Link
+    href="/services"
+    className={`flex items-center gap-2 ${linkClass("/services")}`}
+  >
+    Services
+    <Image
+      src="/images/Chevron_down.png"
+      alt="chevron"
+      width={24}
+      height={24}
+      className="w-[24px] h-auto"
+    />
+  </Link>
+  <Link href="/contact" className={linkClass("/contact")}>
+    Contact Us
+  </Link>
+</div>
 
-                <div
-                  className="flex border border-[#cdcdcd] p-1 rounded-lg cursor-pointer"
-                  onClick={() => setIsOpen(true)}
-                >
-                  <Image
-                    src="/images/Hamburger_LG.svg"
-                    alt="menu"
-                    width={24}
-                    height={24}
-                  />
-                </div>
-              </div>
-            </div>
+<div className="flex items-center gap-8 mx-5">
+  <div>
+    <Image
+      src="/images/Search_Magnifying_Glass.svg"
+      alt="search icon"
+      width={24}
+      height={24}
+      className="w-[24px] h-auto"
+    />
+  </div>
+
+  <div className="flex items-center gap-4">
+    <div
+      className="flex items-center border border-[#cdcdcd] rounded-2xl p-1 cursor-pointer"
+      onClick={() => setShowDropdown(!showDropdown)}
+    >
+      <Image
+        src="/images/User_01.svg"
+        alt="user"
+        width={24}
+        height={24}
+        className="w-[24px] h-auto"
+      />
+      <Image
+        src="/images/Caret_Down_MD.svg"
+        alt="caret"
+        width={24}
+        height={24}
+        className="w-[24px] h-auto"
+      />
+    </div>
+
+    {showDropdown && (
+      <div
+        ref={dropdownRef}
+        className="absolute top-full mt-2 w-48 bg-white shadow-lg rounded-md z-50 right-20 transition duration-500 ease-in-out"
+      >
+        <ul className="p-2 text-sm">
+          <li className="px-4 py-2 text-gray-400 text-[14px]">Credit Portal</li>
+          <li className="px-4 py-2 hover:bg-green-200 transition duration-500 hover:rounded-lg cursor-pointer">
+            Admin Login
+          </li>
+          <li className="px-4 py-2 hover:bg-green-200 transition duration-500 hover:rounded-lg cursor-pointer">
+            Credit Login
+          </li>
+        </ul>
+      </div>
+    )}
+
+    <div
+      className="flex border border-[#cdcdcd] p-1 rounded-lg cursor-pointer"
+      onClick={() => setIsOpen(true)}
+    >
+      <Image
+        src="/images/Hamburger_LG.svg"
+        alt="menu"
+        width={24}
+        height={24}
+        className="w-[24px] h-auto"
+      />
+    </div>
+  </div>
+</div>
+
           </nav>
         </header>
 
@@ -280,6 +291,7 @@ export default function RootLayout({ children }) {
                 src="/images/NeximLogo.png"
                 width={267}
                 height={89}
+                alt="neximlogo"
               ></Image>
               <p className="mt-5">
                 Empowering Nigerian exporters with <br /> financing and support
@@ -358,7 +370,7 @@ export default function RootLayout({ children }) {
         <footer className="w-full  bg-[#050b3d]">
           <div className="flex flex-col md:flex-row justify-between pt-20 px-11.5 pb-16 gap-[90px]">
             <div className="max-w-xs md:max-w-[20%]">
-              <Image src="/images/logo-1.svg" width={173} height={38} />
+              <Image src="/images/logo-1.svg" width={173} height={38} alt="logo-1"/>
               <p className="text-white font-regular pt-3">
                 Empowering Nigerian exporters with financing and support to
                 thrive in global markets
@@ -411,13 +423,33 @@ export default function RootLayout({ children }) {
                 District, Garki, Abuja, Nigeria
               </p>
               <p className="text-white">Social Media</p>
-            <div className="flex items-center gap-5 pt-2">
-              <Image src='/images/twitter.svg' alt="X" width={18} height={18}/>
-              <Image src='/images/insta.svg' alt="X" width={18} height={18}/>
-              <Image src='/images/facebook.svg' alt="X" width={18} height={18}/>
-              <Image src='/images/youtube.svg' alt="X" width={18} height={18}/>
-              <Image src='/images/linkedin.svg' alt="X" width={18} height={18}/>
-            </div>
+              <div className="flex items-center gap-5 pt-2">
+                <Image
+                  src="/images/twitter.svg"
+                  alt="X"
+                  width={18}
+                  height={18}
+                />
+                <Image src="/images/insta.svg" alt="X" width={18} height={18} />
+                <Image
+                  src="/images/facebook.svg"
+                  alt="facebook"
+                  width={18}
+                  height={18}
+                />
+                <Image
+                  src="/images/youtube.svg"
+                  alt="youtube"
+                  width={18}
+                  height={18}
+                />
+                <Image
+                  src="/images/linkedin.svg"
+                  alt="linkedin"
+                  width={18}
+                  height={18}
+                />
+              </div>
             </div>
             <div className="flex-1 flex justify-end items-start">
               <div className="bg-white inline-flex gap-2 p-2 rounded-full items-center mr-50 md:mr-0">
@@ -437,14 +469,22 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           </div>
-          
-  <div className="text-white text-left md:space-y-0 space-y-2 flex flex-col md:flex-row md:justify-center md:items-center p-8 border-t border-gray-800 ">
-    <p className="w-[12rem] md:w-fit">&copy; {new Date().getFullYear()} NeximBank Ltd. All Rights Reserved.</p>
-    <span className="border-b border-white w-fit md:mx-2">Terms of service</span>
-    <span className="border-b border-white w-fit md:mx-2">Privacy policy</span>
-    <span className="border-b border-white w-fit md:mx-2">Cookies Settings</span>
-  </div>
 
+          <div className="text-white text-left md:space-y-0 space-y-2 flex flex-col md:flex-row md:justify-center md:items-center p-8 border-t border-gray-800 ">
+            <p className="w-[12rem] md:w-fit">
+              &copy; {new Date().getFullYear()} NeximBank Ltd. All Rights
+              Reserved.
+            </p>
+            <span className="border-b border-white w-fit md:mx-2">
+              Terms of service
+            </span>
+            <span className="border-b border-white w-fit md:mx-2">
+              Privacy policy
+            </span>
+            <span className="border-b border-white w-fit md:mx-2">
+              Cookies Settings
+            </span>
+          </div>
         </footer>
       </body>
     </html>
