@@ -298,7 +298,7 @@ export default function Home() {
             src="/images/Small.png"
             alt="form background"
             width='100%'
-            className="object-cover w-full h-auto"
+            className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
