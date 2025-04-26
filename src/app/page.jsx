@@ -24,7 +24,7 @@ export default function Home() {
     <main className="mx-auto">
       <section className="relative w-full h-auto ">
         <div className="relative">
-          <Image
+          <img
             src="/images/hero.png"
             alt="Hero"
             width={0}
@@ -49,7 +49,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <p className="border-b-2 border-white">Explore our services</p>
-              <Image
+              <img
                 src="/images/Vector.svg"
                 width={16}
                 height={16}
@@ -61,7 +61,7 @@ export default function Home() {
 
           <div className="absolute">
             <div className="relative  mt-[101px] md:mt-0 items-center w-[356px] md:w-[250px] lg:w-[316px] left-0 md:left-[420px] lg:left-[950px] ">
-              <Image
+              <img
                 src="/images/PlayBox.png"
                 width={356}
                 height={268}
@@ -81,12 +81,12 @@ export default function Home() {
             <p className="text-[20px] font-medium border-b border-black leading-tight">
               Learn more about us
             </p>
-            <Image
+            <img
               src="/images/VectorBlack.svg"
               alt="black"
               width={14}
               height={12}
-            ></Image>
+            ></img>
           </div>
         </div>
         <div className=" md:text-[20px] font-light space-y-4 w-90 md:w-[40.5rem]">
@@ -118,7 +118,7 @@ export default function Home() {
           <div className="animate-scroll flex w-max gap-10 items-center">
             {logos.map((logo, index) => (
               <div key={index} className="inline-block">
-                <Image
+                <img
                   src={logo}
                   alt={`logo ${index}`}
                   width={200}
@@ -157,7 +157,7 @@ export default function Home() {
               className=" w-[23rem] md:w-[30rem] lg:w-[35rem] overflow-hidden rounded-2xl flex flex-col group mx-auto md:m-0"
             >
               <div className="overflow-hidden rounded-t-2xl">
-                <Image
+                <img
                   src={item.image}
                   alt={item.title}
                   width={560}
@@ -190,7 +190,7 @@ export default function Home() {
 
             <div className="hidden md:flex items-center gap-4">
               <div className="group border border-gray-800 p-3 rounded-full hover:bg-white transition duration-500">
-                <Image
+                <img
                   src="/images/ArrowLeft.svg"
                   alt="arrow left"
                   width={14}
@@ -198,7 +198,7 @@ export default function Home() {
                 />
               </div>
               <div className="group border border-white p-3 rounded-full hover:bg-white transition duration-500">
-                <Image
+                <img
                   src="/images/ArrowRight.svg"
                   alt="arrow right"
                   width={14}
@@ -214,7 +214,7 @@ export default function Home() {
               {sliderData.map((item, index) => (
                 <div key={index} className="w-[333px]">
                   <div className="h-[24.25rem] relative">
-                    <Image
+                    <img
                       src={item.src}
                       alt={item.title}
                       layout="fill"
@@ -231,7 +231,7 @@ export default function Home() {
 
           <div className="flex md:hidden items-center gap-4 pb-12 pl-2">
             <div className="group border border-gray-800 p-4 rounded-full hover:bg-white transition duration-500">
-              <Image
+              <img
                 src="/images/ArrowLeft.svg"
                 alt="arrow left"
                 width={14}
@@ -239,7 +239,7 @@ export default function Home() {
               />
             </div>
             <div className="group border border-white p-4 rounded-full hover:bg-white transition duration-500">
-              <Image
+              <img
                 src="/images/ArrowRight.svg"
                 alt="arrow right"
                 width={14}
@@ -270,7 +270,7 @@ export default function Home() {
             <div className="pt-16">
               <div className="flex items-center gap-2">
                 <div className="group border hover:border-black p-6 rounded-full bg-black hover:bg-white transition duration-500">
-                  <Image
+                  <img
                     src="/images/ArrowLeftWhite.svg"
                     alt="arrowleft icon"
                     width={16.73}
@@ -279,7 +279,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="group border hover:border-black p-6 rounded-full bg-black hover:bg-white transition duration-500">
-                  <Image
+                  <img
                     src="/images/ArrowRightWhite.svg"
                     alt="arrowleft icon"
                     width={16}
@@ -294,7 +294,7 @@ export default function Home() {
       </section>
       <section className="relative w-full px-4 py-16">
         <div className="absolute inset-0 -z-10">
-          <Image
+          <img
             src="/images/Small.png"
             alt="form background"
             fill
@@ -369,7 +369,7 @@ export default function Home() {
               <div key={index} className="w-[288px] flex-shrink-0">
                 <div className="relative rounded-lg">
                   <div className="w-full h-[228px] relative">
-                    <Image
+                    <img
                       src={item.src}
                       alt={item.title}
                       layout="fill"

@@ -53,14 +53,14 @@ export default function RootLayout({ children }) {
             <h5 className="hidden md:flex">Nigeria Export Import Bank</h5>
             <div className="flex items-center mx-5 gap-6">
               <div className="flex items-center gap-2">
-                <Image
+                <img
                   src="/images/globe.svg"
                   alt="globe"
                   width={20}
                   height={20}
-                ></Image>
+                ></img>
                 <h3>English</h3>
-                <Image
+                <img
                   src="/images/Caret_Down_MD.svg"
                   alt="search icon"
                   width={24}
@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
           </div>
           <nav className="flex justify-between p-5 z-10 relative items-center">
           <div className="relative w-[116px] h-[38px]">
-  <Image
+  <img
     src="/images/logo3.png"
     alt="logo3"
     width={116}
@@ -95,7 +95,7 @@ export default function RootLayout({ children }) {
     className={`flex items-center gap-2 ${linkClass("/about")}`}
   >
     About Us
-    <Image
+    <img
       src="/images/Chevron_down.png"
       alt="chevron"
       width={24}
@@ -108,7 +108,7 @@ export default function RootLayout({ children }) {
     className={`flex items-center gap-2 ${linkClass("/services")}`}
   >
     Services
-    <Image
+    <img
       src="/images/Chevron_down.png"
       alt="chevron"
       width={24}
@@ -123,7 +123,7 @@ export default function RootLayout({ children }) {
 
 <div className="flex items-center gap-8 mx-5">
   <div>
-    <Image
+    <img
       src="/images/Search_Magnifying_Glass.svg"
       alt="search icon"
       width={24}
@@ -137,14 +137,14 @@ export default function RootLayout({ children }) {
       className="flex items-center border border-[#cdcdcd] rounded-2xl p-1 cursor-pointer"
       onClick={() => setShowDropdown(!showDropdown)}
     >
-      <Image
+      <img
         src="/images/User_01.svg"
         alt="user"
         width={24}
         height={24}
         className="w-[24px] h-auto"
       />
-      <Image
+      <img
         src="/images/Caret_Down_MD.svg"
         alt="caret"
         width={24}
@@ -174,7 +174,7 @@ export default function RootLayout({ children }) {
       className="flex border border-[#cdcdcd] p-1 rounded-lg cursor-pointer"
       onClick={() => setIsOpen(true)}
     >
-      <Image
+      <img
         src="/images/Hamburger_LG.svg"
         alt="menu"
         width={24}
@@ -287,12 +287,12 @@ export default function RootLayout({ children }) {
         >
           <aside className="py-10 px-11 flex  gap-[181px] ">
             <div>
-              <Image
+              <img
                 src="/images/NeximLogo.png"
                 width={267}
                 height={89}
                 alt="neximlogo"
-              ></Image>
+              ></img>
               <p className="mt-5">
                 Empowering Nigerian exporters with <br /> financing and support
                 to thrive in
@@ -370,7 +370,7 @@ export default function RootLayout({ children }) {
         <footer className="w-full  bg-[#050b3d]">
           <div className="flex flex-col md:flex-row justify-between pt-20 px-11.5 pb-16 gap-[90px]">
             <div className="max-w-xs md:max-w-[20%]">
-              <Image src="/images/logo-1.svg" width={173} height={38} alt="logo-1"/>
+              <img src="/images/logo-1.svg" width={173} height={38} alt="logo-1"/>
               <p className="text-white font-regular pt-3">
                 Empowering Nigerian exporters with financing and support to
                 thrive in global markets
@@ -424,26 +424,26 @@ export default function RootLayout({ children }) {
               </p>
               <p className="text-white">Social Media</p>
               <div className="flex items-center gap-5 pt-2">
-                <Image
+                <img
                   src="/images/twitter.svg"
                   alt="X"
                   width={18}
                   height={18}
                 />
-                <Image src="/images/insta.svg" alt="X" width={18} height={18} />
-                <Image
+                <img src="/images/insta.svg" alt="X" width={18} height={18} />
+                <img
                   src="/images/facebook.svg"
                   alt="facebook"
                   width={18}
                   height={18}
                 />
-                <Image
+                <img
                   src="/images/youtube.svg"
                   alt="youtube"
                   width={18}
                   height={18}
                 />
-                <Image
+                <img
                   src="/images/linkedin.svg"
                   alt="linkedin"
                   width={18}
@@ -453,14 +453,14 @@ export default function RootLayout({ children }) {
             </div>
             <div className="flex-1 flex justify-end items-start">
               <div className="bg-white inline-flex gap-2 p-2 rounded-full items-center mr-50 md:mr-0">
-                <Image
+                <img
                   src="/images/globe.svg"
                   alt="globe"
                   width={10}
                   height={10}
                 />
                 <p className="text-gray-700">English</p>
-                <Image
+                <img
                   src="/images/Caret_Down_MD.svg"
                   alt="arrow down"
                   width={10}
