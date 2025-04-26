@@ -218,7 +218,7 @@ export default function Home() {
                       src={item.src}
                       alt={item.title}
                       layout="fill"
-                      objectFit="cover"
+                      className="object-cover"
                     />
                   </div>
                   <p className="mt-2 text-sm font-medium text-white w-full line-clamp-2 text-left">
@@ -297,8 +297,8 @@ export default function Home() {
           <img
             src="/images/Small.png"
             alt="form background"
-            fill
-            className="object-cover"
+            width='100%'
+            className="object-cover w-full h-auto"
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
@@ -373,8 +373,7 @@ export default function Home() {
                       src={item.src}
                       alt={item.title}
                       layout="fill"
-                      objectFit="cover"
-                      className="rounded-lg"
+                      className="rounded-lg object-cover"
                     />
                   </div>
                   <div className="mt-3">
