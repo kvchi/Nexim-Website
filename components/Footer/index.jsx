@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-xs md:max-w-[20%]">
         <div className="relative w-[173px] h-[38px]">
           <img
-            src="/images/logo-1.svg"
+            src="/images/Logo-1.svg"
             fill
             className="object-cover"
             alt="logo-1"

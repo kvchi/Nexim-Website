@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Chat from "../../components/Chatbot/Chat";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 import partnerLogos from "@/data/partnerLogos";
 import sliderData from "@/data/sliderData";
@@ -19,7 +20,7 @@ export default function Home() {
   const [showSecondImage, setShowSecondImage] = useState(false);
 
   const toggleImages = () => {
-    setShowSecondImage(prev => !prev);
+    setShowSecondImage((prev) => !prev);
   };
 
   const toggleChat = () => {
@@ -50,17 +51,13 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <p className="border-b-2 border-white text-sm md:text-base">
-                Explore our services
-              </p>
-              <img
-                src="/images/Vector.svg"
-                width={16}
-                height={16}
-                alt="arrow"
-                className="pt-1"
-              />
-            </div>
+  <div className="group flex items-center gap-2 cursor-pointer">
+    <p className="border-b-2 border-white text-sm md:text-base group-hover:text-red-400 group-hover:border-red-400 transition-all duration-300">
+      Explore our services
+    </p>
+    <FaArrowRightLong className="text-white w-4 h-4 transform transition-all duration-300 group-hover:text-red-400 group-hover:-rotate-90" />
+  </div>
+</div>
           </div>
         </div>
 
@@ -217,24 +214,23 @@ export default function Home() {
           </div>
 
           <div className="py-20 w-full overflow-x-auto hide-scrollbar">
-  <div className="flex items-center gap-8 min-w-max">
-    {sliderData.map((item, index) => (
-      <div key={index} className="w-[333px]">
-        <div className="h-[24.25rem] relative overflow-hidden">
-          <img
-            src={item.src}
-            alt={item.title}
-            className="object-cover w-full h-full"
-          />
-        </div>
-        <p className="mt-2 text-sm font-medium text-white w-full line-clamp-2 text-left">
-          {item.title}
-        </p>
-      </div>
-    ))}
-  </div>
-</div>
-
+            <div className="flex items-center gap-8 min-w-max">
+              {sliderData.map((item, index) => (
+                <div key={index} className="w-[333px]">
+                  <div className="h-[24.25rem] relative overflow-hidden">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <p className="mt-2 text-sm font-medium text-white w-full line-clamp-2 text-left">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
           <div className="flex md:hidden items-center gap-4 pb-12 pl-2">
             <div className="group border border-gray-800 p-4 rounded-full hover:bg-white transition duration-500">
@@ -387,7 +383,6 @@ export default function Home() {
             ))}
           </div>
 
-          
           <div className="hidden xl:flex gap-6">
             {newsData.map((item, index) => (
               <div key={index} className="w-[200px] xl:w-[288px] flex-shrink-0">
@@ -418,34 +413,37 @@ export default function Home() {
         </div>
       </section>
       <div>
-      <div className="fixed bottom-10 right-10">
-        {/* First image */}
-        <img
-          src="/images/chatbot1.svg"
-          alt="messagebot"
-          onClick={() => {
-            toggleImages();
-            toggleChat()
-          }}
-          className={`cursor-pointer transition-opacity duration-500 ${showSecondImage ? 'opacity-0' : 'opacity-100'}`}
-        />
-      </div>
+        <div className="fixed bottom-10 right-10">
+          {/* First image */}
+          <img
+            src="/images/chatbot1.svg"
+            alt="messagebot"
+            onClick={() => {
+              toggleImages();
+              toggleChat();
+            }}
+            className={`cursor-pointer transition-opacity duration-500 ${
+              showSecondImage ? "opacity-0" : "opacity-100"
+            }`}
+          />
+        </div>
 
-      <div className="fixed bottom-10 right-10">
-        {/* Second image */}
-        <img
-          src="/images/chatbot2.svg"
-          alt="messagebot2"
-          onClick={() => {
-            toggleImages();
-            toggleChat()
-          }}
-          className={`cursor-pointer transition-opacity duration-500 ${showSecondImage ? 'opacity-100' : 'opacity-0'}`}
-        />
+        <div className="fixed bottom-10 right-10">
+          {/* Second image */}
+          <img
+            src="/images/chatbot2.svg"
+            alt="messagebot2"
+            onClick={() => {
+              toggleImages();
+              toggleChat();
+            }}
+            className={`cursor-pointer transition-opacity duration-500 ${
+              showSecondImage ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        </div>
       </div>
-    </div>
       {showChat && <Chat />}
-      
     </main>
   );
 }
