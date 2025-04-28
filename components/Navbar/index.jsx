@@ -68,8 +68,8 @@ const Navbar = () => {
         <nav className="flex justify-between p-5 z-10 relative items-center">
           <div className="relative w-[116px] h-[38px]">
             <img
-              src="/images/logo3.png"
-              alt="logo3"
+              src="/images/Logo3.png"
+              alt="Logo3"
               
               className="object-cover"
             />
@@ -85,7 +85,7 @@ const Navbar = () => {
             >
               About Us
               <img
-                src="/images/Chevron_down.png"
+                src="/images/Chevron_Down.png"
                 alt="chevron"
                 width={24}
                 height={24}
@@ -98,7 +98,7 @@ const Navbar = () => {
             >
               Services
               <img
-                src="/images/Chevron_down.png"
+                src="/images/Chevron_Down.png"
                 alt="chevron"
                 width={24}
                 height={24}
