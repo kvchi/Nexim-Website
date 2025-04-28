@@ -443,7 +443,13 @@ export default function Home() {
           />
         </div>
       </div>
-      {showChat && <Chat />}
+      <div
+  className={`fixed bottom-20 right-10 transition-all duration-500 ${
+    showChat ? "opacity-100 visible" : "opacity-0 invisible"
+  }`}
+>
+  <Chat />
+</div>
     </main>
   );
 }

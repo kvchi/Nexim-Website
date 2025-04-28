@@ -67,12 +67,7 @@ const Navbar = () => {
         </div>
         <nav className="flex justify-between p-5 z-10 relative items-center">
           <div className="relative w-[116px] h-[38px]">
-            <img
-              src="/images/Logo3.png"
-              alt="Logo3"
-              
-              className="object-cover"
-            />
+            <img src="/images/Logo3.png" alt="Logo3" className="object-cover" />
           </div>
 
           <div className="items-center gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden md:flex">
@@ -141,25 +136,26 @@ const Navbar = () => {
                   className="w-[24px] h-auto"
                 />
               </div>
-
-              {showDropdown && (
-                <div
-                  ref={dropdownRef}
-                  className="absolute top-full mt-2 w-48 bg-white shadow-lg rounded-md z-50 right-20 transition duration-500 ease-in-out"
-                >
-                  <ul className="p-2 text-sm">
-                    <li className="px-4 py-2 text-gray-400 text-[14px]">
-                      Credit Portal
-                    </li>
-                    <li className="px-4 py-2 hover:bg-green-200 transition duration-500 hover:rounded-lg cursor-pointer">
-                      Admin Login
-                    </li>
-                    <li className="px-4 py-2 hover:bg-green-200 transition duration-500 hover:rounded-lg cursor-pointer">
-                      Credit Login
-                    </li>
-                  </ul>
-                </div>
-              )}
+              <div
+                ref={dropdownRef}
+                className={`absolute top-full mt-2 w-48 bg-white shadow-lg rounded-md z-50 right-20 transition-all duration-500 ease-in-out transform ${
+                  showDropdown
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible translate-y-2"
+                }`}
+              >
+                <ul className="p-2 text-sm">
+                  <li className="px-4 py-2 text-gray-400 text-[14px]">
+                    Credit Portal
+                  </li>
+                  <li className="px-4 py-2 hover:bg-green-200 transition duration-500 hover:rounded-lg cursor-pointer">
+                    Admin Login
+                  </li>
+                  <li className="px-4 py-2 hover:bg-green-200 transition duration-500 hover:rounded-lg cursor-pointer">
+                    Credit Login
+                  </li>
+                </ul>
+              </div>
 
               <div
                 className="flex border border-[#cdcdcd] p-1 rounded-lg cursor-pointer"
