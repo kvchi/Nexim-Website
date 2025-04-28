@@ -1,6 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
+import Chat from "../../components/Chatbot/Chat";
+
 import partnerLogos from "@/data/partnerLogos";
 import sliderData from "@/data/sliderData";
 import newsData from "@/data/newsData";
@@ -13,6 +15,17 @@ const poppins = Poppins({
 });
 
 export default function Home() {
+  const [showChat, setShowChat] = useState(false);
+  const [showSecondImage, setShowSecondImage] = useState(false);
+
+  const toggleImages = () => {
+    setShowSecondImage(prev => !prev);
+  };
+
+  const toggleChat = () => {
+    setShowChat((prev) => !prev);
+  };
+
   const logos = [
     ...partnerLogos,
     ...partnerLogos,
@@ -22,33 +35,24 @@ export default function Home() {
 
   return (
     <main className="mx-auto">
-      <section className="relative w-full h-auto ">
-        <div className="relative">
-          <img
-            src="/images/hero.png"
-            alt="Hero"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="md:w-full md:h-auto w-full h-[736px] mt-[80px] md:mt-[90px] lg:-mt-[80px] object-cover"
-          />
-        </div>
-
-        <div className="absolute items-center md:justify-start z-10 top-[100px] px-3 md:px-15 lg:px-0  lg:left-[100px] lg:top-[294px] text-white w-full lg:mx-auto">
-          <div className="flex flex-col gap-6">
-            <h1 className="text-3xl lg:text-[90px] font-semibold text-start leading-[100%]">
+      <section className="relative bg-[url('/images/hero.png')] bg-no-repeat bg-cover w-full h-auto pt-[100px] md:pt-[150px] lg:pt-[169px] pb-[150px] md:pb-[250px] lg:pb-[374px] px-4 md:px-10 lg:px-[138px]">
+        <div className="flex items-center md:justify-start z-10 text-white w-full">
+          <div className="flex flex-col gap-4 md:gap-6">
+            <h1 className="text-2xl md:text-5xl lg:text-[90px] font-semibold text-start leading-[110%] md:leading-[100%]">
               <span>Financing the</span> <br />
               <span>Future of Nigerian</span> <br />
               <span>Trade</span>
             </h1>
-            <div className="text-start md:w-[500px]">
-              <p className="font-medium text-[14px] md:text-[20px]">
+            <div className="text-start max-w-[90%] md:max-w-[500px]">
+              <p className="font-medium text-sm md:text-base lg:text-[20px]">
                 Empowering Nigerian exporters with financing and support to
                 thrive in global markets
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <p className="border-b-2 border-white">Explore our services</p>
+              <p className="border-b-2 border-white text-sm md:text-base">
+                Explore our services
+              </p>
               <img
                 src="/images/Vector.svg"
                 width={16}
@@ -58,27 +62,28 @@ export default function Home() {
               />
             </div>
           </div>
+        </div>
 
-          <div className="absolute">
-            <div className="relative  mt-[101px] md:mt-0 items-center w-[356px] md:w-[250px] lg:w-[316px] left-0 md:left-[420px] lg:left-[950px] ">
-              <img
-                src="/images/PlayBox.png"
-                width={356}
-                height={268}
-                alt="Play"
-                className=" object-cover"
-              />
-            </div>
+        <div className="absolute bottom-5 right-5 max-sm:static max-sm:mt-8 flex justify-center">
+          <div className="relative w-[250px] sm:w-[300px] md:w-[250px] lg:w-[316px]">
+            <img
+              src="/images/PlayBox.png"
+              width={316}
+              height={268}
+              alt="Play"
+              className="object-cover w-full"
+            />
           </div>
         </div>
       </section>
-      <aside className=" flex flex-col lg:flex-row items-start px-4 md:px-14 lg:px-[8.5rem] pt-[16.5rem] gap-20">
-        <div className="md:w-[30.5rem] h-auto leading-10 md:leading-15">
-          <h3 className="font-semibold text-[32px] md:text-[48px]">
+
+      <aside className="flex flex-col lg:flex-row items-start px-4 md:px-14 lg:px-[8.5rem] pt-[8rem] md:pt-[12rem] lg:pt-[16.5rem] gap-10 md:gap-16 lg:gap-20">
+        <div className="w-full md:w-[30.5rem] h-auto leading-8 md:leading-10">
+          <h3 className="font-semibold text-2xl md:text-4xl lg:text-[48px] leading-snug">
             Driving Economic Growth with Purpose & Partnership
           </h3>
-          <div className="flex items-center pt-10 gap-3">
-            <p className="text-[20px] font-medium border-b border-black leading-tight">
+          <div className="flex items-center pt-6 md:pt-10 gap-2 md:gap-3">
+            <p className="text-base md:text-[20px] font-medium border-b border-black leading-tight">
               Learn more about us
             </p>
             <img
@@ -86,10 +91,11 @@ export default function Home() {
               alt="black"
               width={14}
               height={12}
-            ></img>
+            />
           </div>
         </div>
-        <div className=" md:text-[20px] font-light space-y-4 w-90 md:w-[40.5rem]">
+
+        <div className="text-sm md:text-base lg:text-[20px] font-light space-y-4 w-full md:w-[40.5rem]">
           <p>
             The Nigerian Export Import Bank (NEXIM) is a government owned
             financial institution established to promote the diversification of
@@ -109,6 +115,7 @@ export default function Home() {
           </p>
         </div>
       </aside>
+
       <section className="pt-[3.45rem] md:pt-[10.5rem]">
         <div className="flex justify-center items-center">
           <h2 className="text-[32px] font-medium">Our Partners</h2>
@@ -210,24 +217,24 @@ export default function Home() {
           </div>
 
           <div className="py-20 w-full overflow-x-auto hide-scrollbar">
-            <div className="flex items-center gap-8 min-w-max">
-              {sliderData.map((item, index) => (
-                <div key={index} className="w-[333px]">
-                  <div className="h-[24.25rem] relative">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      layout="fill"
-                      className="object-cover"
-                    />
-                  </div>
-                  <p className="mt-2 text-sm font-medium text-white w-full line-clamp-2 text-left">
-                    {item.title}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+  <div className="flex items-center gap-8 min-w-max">
+    {sliderData.map((item, index) => (
+      <div key={index} className="w-[333px]">
+        <div className="h-[24.25rem] relative overflow-hidden">
+          <img
+            src={item.src}
+            alt={item.title}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <p className="mt-2 text-sm font-medium text-white w-full line-clamp-2 text-left">
+          {item.title}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
 
           <div className="flex md:hidden items-center gap-4 pb-12 pl-2">
             <div className="group border border-gray-800 p-4 rounded-full hover:bg-white transition duration-500">
@@ -292,19 +299,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative w-full px-4 py-16">
-        <div className="absolute inset-0 -z-10">
-          <img
-            src="/images/Small.png"
-            alt="form background"
-            width='100%'
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
-
+      <section className="relative bg-[url('/images/Small.png')] w-full px-4 py-16 bg-no-repeat bg-cover bg-center">
         <div
-          className={`relative max-w-md ml-auto bg-transparent p-6 rounded-lg mr-4 ${poppins.className}`}
+          className={`relative max-w-md ml-auto p-6 rounded-lg mr-4 ${poppins.className}`}
         >
           <h2 className="text-2xl font-semibold mb-4 text-white">
             Get in Touch with Us
@@ -359,28 +356,54 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full h-auto py-[6.5rem]">
-        <div className="px-[2rem] md:px-[8.3rem]">
-          <div className="">
-            <h4 className="text-2xl font-bold mb-6">Latest News</h4>
-          </div>
+        <div className="max-w-[1000px] xl:max-w-[1224px] px-4 xl:px-[2rem] mx-auto w-full">
+          <h4 className="text-2xl font-bold mb-6 ">Latest News</h4>
 
-          <div className="flex gap-6 overflow-x-auto lg:overflow-visible md:flex-nowrap hide-scrollbar w-full">
+          {/* Card Slider for smaller screens */}
+          <div className="xl:hidden overflow-x-auto  flex gap-6 ">
             {newsData.map((item, index) => (
-              <div key={index} className="w-[288px] flex-shrink-0">
+              <div key={index} className="w-[200px] flex-shrink-0 snap-start">
                 <div className="relative rounded-lg">
-                  <div className="w-full h-[228px] relative">
+                  <div className="w-full h-[228px] relative rounded-lg">
                     <img
                       src={item.src}
                       alt={item.title}
-                      layout="fill"
-                      className="rounded-lg object-cover"
+                      className="object-cover w-full h-full rounded-lg"
                     />
                   </div>
                   <div className="mt-3">
                     <h5 className="text-lg font-semibold text-gray-800 line-clamp-2 min-h-[3.5rem]">
                       {item.title}
                     </h5>
+                    <p className="text-sm text-[#767676] pt-4">{item.desc}</p>
+                  </div>
+                  <div className="text-xs mt-2 flex items-center gap-2 pt-8">
+                    <span className="text-[#FF8C53]">{item.date}</span>
+                    <div className="w-2 h-2 bg-[#767676] rounded-full"></div>
+                    <span className="text-gray-500">{item.readTime}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
 
+          
+          <div className="hidden xl:flex gap-6">
+            {newsData.map((item, index) => (
+              <div key={index} className="w-[200px] xl:w-[288px] flex-shrink-0">
+                <div className="relative rounded-lg">
+                  <div className="w-full h-[228px] relative rounded-lg">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="mt-3">
+                    <h5 className="text-lg font-semibold text-gray-800 line-clamp-2 min-h-[3.5rem]">
+                      {item.title}
+                    </h5>
                     <p className="text-sm text-[#767676] pt-4">{item.desc}</p>
                   </div>
                   <div className="text-xs mt-2 flex items-center gap-2 pt-8">
@@ -394,6 +417,35 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div>
+      <div className="fixed bottom-10 right-10">
+        {/* First image */}
+        <img
+          src="/images/chatbot1.svg"
+          alt="messagebot"
+          onClick={() => {
+            toggleImages();
+            toggleChat()
+          }}
+          className={`cursor-pointer transition-opacity duration-500 ${showSecondImage ? 'opacity-0' : 'opacity-100'}`}
+        />
+      </div>
+
+      <div className="fixed bottom-10 right-10">
+        {/* Second image */}
+        <img
+          src="/images/chatbot2.svg"
+          alt="messagebot2"
+          onClick={() => {
+            toggleImages();
+            toggleChat()
+          }}
+          className={`cursor-pointer transition-opacity duration-500 ${showSecondImage ? 'opacity-100' : 'opacity-0'}`}
+        />
+      </div>
+    </div>
+      {showChat && <Chat />}
+      
     </main>
   );
 }
