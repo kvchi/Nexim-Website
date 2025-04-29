@@ -1,15 +1,11 @@
 const ChatMessage = ({ message }) => {
-    // Check if message has the right properties
-    const isUser = message.role === 'user';
+    const isUser = message.sender === 'user';
   
     return (
-      <div className={`mb-2 p-2 rounded ${isUser ? 'bg-blue-100 text-right' : 'bg-gray-200 text-left'}`}>
-        {/* Use the correct field here */}
-        {message.text || message.content}
+      <div className={`mb-2 p-2 rounded max-w-xs break-words ${isUser ? 'bg-blue-100 text-right ml-auto' : 'bg-gray-200 text-left mr-auto'}`}>
+        {message.text}
       </div>
     );
   };
   
   export default ChatMessage;
-  
-  

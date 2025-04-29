@@ -66,9 +66,9 @@ const Navbar = () => {
           </div>
         </div>
         <nav className="flex justify-between p-5 z-10 relative items-center">
-          <div className="relative w-[116px] h-[38px]">
+          <Link href="/" className="relative w-[116px] h-[38px]">
             <img src="/images/Logo3.png" alt="Logo3" className="object-cover" />
-          </div>
+          </Link>
 
           <div className="items-center gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden md:flex">
             <Link href="/" className={linkClass("/")}>
