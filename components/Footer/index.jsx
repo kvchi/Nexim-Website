@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
         <p className="text-white font-regular pt-3">
           Empowering Nigerian exporters with financing and support to thrive
-          in global markets
+          in global markets.
         </p>
         <div className="bg-[#E81005] px-2.5 py-0.5 inline-flex gap-2 rounded-lg items-center mt-3">
           <p className="text-white">reportgov</p>
@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="text-white">Location</div>
         <p className="text-white">
           NEXIM House, Plot 975 Cadastral Zone AO, Central Business District,
-          Garki, Abuja, Nigeria
+          Garki, Abuja, Nigeria.
         </p>
         <p className="text-white">Social Media</p>
         <div className="flex items-center gap-5 pt-2">
@@ -108,13 +108,13 @@ const Footer = () => {
         &copy; {new Date().getFullYear()} NeximBank Ltd. All Rights Reserved.
       </p>
       <span className="border-b border-white w-fit md:mx-2">
-        Terms of service
+        Terms of service.
       </span>
       <span className="border-b border-white w-fit md:mx-2">
-        Privacy policy
+        Privacy policy.
       </span>
       <span className="border-b border-white w-fit md:mx-2">
-        Cookies Settings
+        Cookies Settings.
       </span>
     </div>
   </footer>

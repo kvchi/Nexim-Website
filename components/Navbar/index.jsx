@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -70,35 +71,23 @@ const Navbar = () => {
             <img src="/images/Logo3.png" alt="Logo3" className="object-cover" />
           </Link>
 
-          <div className="items-center gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden md:flex">
+          <div className="items-center gap-2 md:gap-4 lg:gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden lg:flex">
             <Link href="/" className={linkClass("/")}>
               Home
             </Link>
             <Link
               href="/about"
-              className={`flex items-center gap-2 ${linkClass("/about")}`}
+              className={`flex items-center  gap-2 ${linkClass("/about")}`}
             >
               About Us
-              <img
-                src="/images/Chevron_Down.png"
-                alt="chevron"
-                width={24}
-                height={24}
-                className="w-[24px] h-auto"
-              />
+              <RiArrowDownSLine className="w-8 h-8 pt-1" />
             </Link>
             <Link
               href="/services"
               className={`flex items-center gap-2 ${linkClass("/services")}`}
             >
               Services
-              <img
-                src="/images/Chevron_Down.png"
-                alt="chevron"
-                width={24}
-                height={24}
-                className="w-[24px] h-auto"
-              />
+              <RiArrowDownSLine className="w-8 h-8 pt-1" />
             </Link>
             <Link href="/contact" className={linkClass("/contact")}>
               Contact Us
@@ -219,7 +208,7 @@ const Navbar = () => {
               className="block border-b-2 border-gray-300"
               onClick={() => setIsOpen(false)}
             >
-              Conatct Us
+              Conatat Us
             </Link>
           </div>
           {/* Mobile menu */}
@@ -332,9 +321,9 @@ const Navbar = () => {
                   <li>Brochures</li>
                 </ul>
                 <ul className="space-y-3">
-                  <li>Presentationd</li>
+                  <li>Presentations</li>
                   <li>Service Level Agreements</li>
-                  <li>Guidlines</li>
+                  <li>Guidelines</li>
                 </ul>
               </div>
             </div>

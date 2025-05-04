@@ -51,13 +51,13 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center gap-2">
-  <div className="group flex items-center gap-2 cursor-pointer">
-    <p className="border-b-2 border-white text-sm md:text-base group-hover:text-red-400 group-hover:border-red-400 transition-all duration-300">
-      Explore our services
-    </p>
-    <FaArrowRightLong className="text-white w-4 h-4 transform transition-all duration-300 group-hover:text-red-400 group-hover:-rotate-90" />
-  </div>
-</div>
+              <div className="group flex items-center gap-2 cursor-pointer">
+                <p className="border-b-2 border-white text-sm md:text-base group-hover:text-red-400 group-hover:border-red-400 transition-all duration-300">
+                  Explore our services
+                </p>
+                <FaArrowRightLong className="text-white w-4 h-4 transform transition-all duration-300 group-hover:text-red-400 group-hover:-rotate-90" />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -79,16 +79,11 @@ export default function Home() {
           <h3 className="font-semibold text-2xl md:text-4xl lg:text-[48px] leading-snug">
             Driving Economic Growth with Purpose & Partnership
           </h3>
-          <div className="flex items-center pt-6 md:pt-10 gap-2 md:gap-3">
-            <p className="text-base md:text-[20px] font-medium border-b border-black leading-tight">
+          <div className="inline-flex items-center gap-2 cursor-pointer group">
+            <p className="border-b-2 border-black text-sm md:text-base transition-all duration-300 group-hover:text-[#037F4D] group-hover:border-[#037F4D]">
               Learn more about us
             </p>
-            <img
-              src="/images/VectorBlack.svg"
-              alt="black"
-              width={14}
-              height={12}
-            />
+            <FaArrowRightLong className="text-black w-4 h-4 transform transition-all duration-300 group-hover:text-[#037F4D] group-hover:-rotate-90" />
           </div>
         </div>
 
@@ -180,41 +175,42 @@ export default function Home() {
         </aside>
       </section>
       <section className="pt-27 w-full h-auto">
-        <div className="bg-[#050B3D] px-[2rem] md:px-[8.3rem]">
-          <div className="flex justify-between">
-            <div className="pt-[6.5rem] text-white">
-              <h3 className="text-[32px] md:text-[48px] font-semibold">
-                Our Products.
-              </h3>
-              <p className="text-[14px] font-light w-[15rem] leading-5">
-                Explore our range of financial solutions designed to support and
-                grow your export business.
-              </p>
-            </div>
-
-            <div className="hidden md:flex items-center gap-4">
-              <div className="group border border-gray-800 p-3 rounded-full hover:bg-white transition duration-500">
-                <img
-                  src="/images/ArrowLeft.svg"
-                  alt="arrow left"
-                  width={14}
-                  height={12}
-                />
+        <div className="bg-[#050B3D] w-full">
+          <div className="px-[2rem] md:px-[8.3rem]">
+            <div className="flex justify-between">
+              <div className="pt-[6.5rem] text-white">
+                <h3 className="text-[32px] md:text-[48px] font-semibold">
+                  Our Products.
+                </h3>
+                <p className="text-[14px] font-light w-[15rem] leading-5">
+                  Explore our range of financial solutions designed to support
+                  and grow your export business.
+                </p>
               </div>
-              <div className="group border border-white p-3 rounded-full hover:bg-white transition duration-500">
-                <img
-                  src="/images/ArrowRight.svg"
-                  alt="arrow right"
-                  width={14}
-                  height={12}
-                  className="group-hover:invert transition duration-500"
-                />
+
+              <div className="hidden md:flex items-center gap-4">
+                <div className="group border border-gray-800 p-3 rounded-full hover:bg-white transition duration-500">
+                  <img
+                    src="/images/ArrowLeft.svg"
+                    alt="arrow left"
+                    width={14}
+                    height={12}
+                  />
+                </div>
+                <div className="group border border-white p-3 rounded-full hover:bg-white transition duration-500">
+                  <img
+                    src="/images/ArrowRight.svg"
+                    alt="arrow right"
+                    width={14}
+                    height={12}
+                    className="group-hover:invert transition duration-500"
+                  />
+                </div>
               </div>
             </div>
           </div>
-
           <div className="py-20 w-full overflow-x-auto hide-scrollbar">
-            <div className="flex items-center gap-8 min-w-max">
+            <div className="flex items-center gap-8 min-w-max px-[2rem] md:px-[8.3rem]">
               {sliderData.map((item, index) => (
                 <div key={index} className="w-[333px]">
                   <div className="h-[24.25rem] relative overflow-hidden">
@@ -231,7 +227,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-
           <div className="flex md:hidden items-center gap-4 pb-12 pl-2">
             <div className="group border border-gray-800 p-4 rounded-full hover:bg-white transition duration-500">
               <img
@@ -256,7 +251,7 @@ export default function Home() {
 
       <section className="pb-40">
         <div className=" pt-[8.5rem] flex flex-col items-center justify-center">
-          <h3 className="font-medium text-2xl">WHAT OUR CLIENT SAY</h3>
+          <h3 className="font-medium text-2xl">WHAT OUR CLIENTS SAY</h3>
 
           <div className="px-4 md:px-0">
             <p className="max-w-md md:max-w-xl font-normal text-xl pt-20 ">
@@ -444,12 +439,12 @@ export default function Home() {
         </div>
       </div>
       <div
-  className={`fixed bottom-20 right-10 transition-all duration-500 ${
-    showChat ? "opacity-100 visible" : "opacity-0 invisible"
-  }`}
->
-  <Chat />
-</div>
+        className={`fixed bottom-20 right-10 transition-all duration-500 ${
+          showChat ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        <Chat />
+      </div>
     </main>
   );
 }
