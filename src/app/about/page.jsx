@@ -1,11 +1,35 @@
+"use client"
+
 import { FaPlus } from "react-icons/fa6";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import managementData from "@/data/managementData";
 import { Inter } from "next/font/google";
+import { useRef } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
+  
+  const contentSectionRef = useRef(null);
+  const scrollToId = (id) => {
+    const contentSection = contentSectionRef.current;
+    if (!contentSection) return;
+  
+    const targetElement = contentSection.querySelector(`#${id}`);
+    if (!targetElement) {
+      console.warn("Target section not found:", id);
+      return;
+    }
+  
+    // Simplified scroll position
+    const scrollPosition = targetElement.offsetTop - 100;
+    console.log('Scrolling to:', id, 'position:', scrollPosition);
+  
+    contentSection.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    });
+  };
   return (
     <main>
       <section className="pt-10 sm:pt-20 md:pt-30 px-4 sm:px-6 md:px-10">
@@ -26,17 +50,19 @@ export default function About() {
         <section className="w-full lg:w-[30%]">
           <div className="space-y-3 pt-10 lg:pt-[111px]">
             <h2 className="font-semibold">About Us</h2>
-            <ul className="text-[#A39F9F] font-normal text-base sm:text-lg md:text-[20px] space-y-2">
-              <li>Board members</li>
-              <li>Management Team</li>
-              <li>Core Values</li>
-              <li>CSB</li>
-              <li>Development Initiative</li>
-              <li>Testimonials</li>
+            <ul className="text-[#A39F9F] font-normal text-base sm:text-lg md:text-[20px] space-y-2 cursor-pointer">
+              <li onClick={() => scrollToId('board-members')}>Board members</li>
+              <li onClick={() => scrollToId('management')}>Management Team</li>
+              <li onClick={() => scrollToId('core')}>Core Values</li>
+              <li onClick={() => scrollToId('csb')}>CSB</li>
+              <li onClick={() => scrollToId('development')}>Development Initiative</li>
+              <li onClick={() => scrollToId('test')}>Testimonials</li>
             </ul>
           </div>
         </section>
-        <section className="w-full lg:w-[70%]">
+        <section
+        ref={contentSectionRef}
+        className="w-full lg:w-[70%] overflow-y-auto overflow-x-hidden ">
           <div className="pt-10 lg:pt-[111px]">
             <h1 className="font-semibold text-2xl md:text-3xl">
               About NEXIM Bank
@@ -144,7 +170,8 @@ export default function About() {
               alt=""
             />
           </div>
-          <div className="py-10 w-full md:w-[70%] space-y-12">
+          <div ref={contentSectionRef} className="overflow-y-auto h-full">
+          <section id="board-members" className="py-10 w-full md:w-[70%] space-y-12 ">
             <h2 className="text-xl md:text-2xl font-semibold mb-6">
               Board Members
             </h2>
@@ -254,8 +281,8 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="pt-20">
+          </section>
+          <section id="management" className="pt-20">
             <div className="flex justify-between">
               <div className="">
                 <h3 className="text-[32px] md:text-[48px] font-semibold">
@@ -302,8 +329,8 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </div>
-          <div className={inter.className}>
+          </section>
+          <section id="core" className={inter.className}>
             <h3 className="text-2xl md:text-[32px] font-semibold">
               Core Values
             </h3>
@@ -437,9 +464,8 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </div>
-
-          <div className="mt-24 w-[70%]">
+          </section>
+          <section id="csb" className="mt-24 w-[70%]">
             <h2 className="text-3xl font-semibold pb-8">
               Corporate Social Responsibility
             </h2>
@@ -472,8 +498,8 @@ export default function About() {
                 line with international best practices.
               </p>
             </div>
-          </div>
-          <div className="mt-20 w-[70%]">
+          </section>
+          <section id="development" className="mt-20 w-[70%]">
             <h2 className="text-3xl font-semibold pb-8">
               Developmental Initiative
             </h2>
@@ -528,6 +554,45 @@ export default function About() {
                 thereby reducing the incidents of informal trade.
               </p>
             </div>
+          </section>
+          <section id="test" className="pt-20">
+            <div className="flex justify-between">
+              <div className="">
+                <h3 className="text-[32px] md:text-[48px] font-semibold">
+                  Testimonials
+                </h3>
+              </div>
+              <div className="hidden md:flex items-center gap-4">
+                <div className="bg-black text-white p-3 rounded-full">
+                  <GoArrowLeft />
+                </div>
+                <div className="bg-black p-3 text-white rounded-full">
+                  <GoArrowRight />
+                </div>
+              </div>
+            </div>
+            <div className="py-10 w-full overflow-x-auto hide-scrollbar">
+              <div className="flex items-center gap-8 min-w-max">
+                {managementData.map((item, index) => (
+                  <div key={index} className="w-[417px]">
+                    <div className=" relative overflow-hidden">
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className=" w-[417px] h-[389px]"
+                      />
+                    </div>
+                    <p className="mt-2 text-2xl font-semibold text-black w-full line-clamp-2 text-left">
+                      {item.name}
+                    </p>
+                    <p className="mt-2 text-sm font-medium text-black w-full line-clamp-2 text-left">
+                      {item.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
           </div>
         </section>
       </aside>

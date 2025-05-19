@@ -34,7 +34,7 @@ const Navbar = () => {
   const linkClass = (path) =>
     `${
       pathname === path
-        ? "text-[#037F4D] border-b-3 border-[#037F4D]"
+        ? "text-[#037F4D] border-b-4 border-[#037F4D]"
         : "text-[#363636]"
     } pb-3`;
   return (
@@ -66,35 +66,32 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <nav className="flex justify-between p-5 z-10 relative items-center">
+        <nav className="flex justify-between p-5 z-10 relative items-center pb-5 ">
+        <div className="absolute bottom-6 left-0 w-full border-b-1 border-[#cccdcc] z-[-1]"></div>
           <Link href="/" className="relative w-[116px] h-[38px]">
             <img src="/images/Logo3.png" alt="Logo3" className="object-cover" />
           </Link>
 
-          <div className="items-center gap-2 md:gap-4 lg:gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden lg:flex">
+          <div className="items-center gap-2 md:gap-4 lg:gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden lg:flex ">
             <Link href="/" className={linkClass("/")}>
               Home
             </Link>
-            <Link
-              href="/about"
-              className={`flex items-center  gap-2 ${linkClass("/about")}`}
-            >
-              About Us
-              <RiArrowDownSLine className="w-8 h-8 pt-1" />
+            <Link href="/about" className="flex items-center gap-2">
+              <span className={linkClass("/about")}>About Us</span>
+              <RiArrowDownSLine className="w-8 h-8 -mt-2" />
             </Link>
             <Link
               href="/services"
-              className={`flex items-center gap-2 ${linkClass("/services")}`}
-            >
-              Services
-              <RiArrowDownSLine className="w-8 h-8 pt-1" />
+              className="flex items-center gap-2 ">
+              <span className={linkClass("/services")}>Services</span>
+              <RiArrowDownSLine className="w-8 h-8 -mt-2" />
             </Link>
             <Link href="/contact" className={linkClass("/contact")}>
               Contact Us
             </Link>
           </div>
 
-          <div className="flex items-center gap-8 mx-5">
+          <div className="flex items-center gap-8 mx-5 -mt-6">
             <div>
               <img
                 src="/images/Search_Magnifying_Glass.svg"
