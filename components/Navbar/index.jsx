@@ -32,14 +32,14 @@ const Navbar = () => {
   }, [showDropdown]);
 
   const linkClass = (path) =>
-    `${
+    `pb-4 border-b-4 transition-all duration-200 ${
       pathname === path
-        ? "text-[#037F4D] border-b-4 border-[#037F4D]"
-        : "text-[#363636]"
-    } pb-3`;
+        ? "text-[#037F4D] border-[#037F4D]"
+        : "text-[#363636] border-transparent "
+    }`;
   return (
     <div>
-      <header className=" z-20 bg-white fixed top-0 w-full shadow-sm">
+      <header className=" z-20 bg-white fixed top-0 w-full">
         <div className="flex justify-between items-center p-5 border-b border-[#c2c2c2]">
           <h5 className="hidden md:flex">Nigeria Export Import Bank</h5>
           <div className="flex items-center mx-5 gap-6">
@@ -67,28 +67,35 @@ const Navbar = () => {
           </div>
         </div>
         <nav className="flex justify-between p-5 z-10 relative items-center pb-5 ">
-        <div className="absolute bottom-6 left-0 w-full border-b-1 border-[#cccdcc] z-[-1]"></div>
+          <div className="absolute bottom-5 left-0 w-full border-b-1 border-[#cccdcc] z-[-1]"></div>
           <Link href="/" className="relative w-[116px] h-[38px]">
             <img src="/images/Logo3.png" alt="Logo3" className="object-cover" />
           </Link>
 
           <div className="items-center gap-2 md:gap-4 lg:gap-[56px] font-semibold text-[20px] font-sans text-[#363636] leading-[0.8] hidden lg:flex ">
-            <Link href="/" className={linkClass("/")}>
-              Home
-            </Link>
-            <Link href="/about" className="flex items-center gap-2">
-              <span className={linkClass("/about")}>About Us</span>
-              <RiArrowDownSLine className="w-8 h-8 -mt-2" />
-            </Link>
-            <Link
-              href="/services"
-              className="flex items-center gap-2 ">
-              <span className={linkClass("/services")}>Services</span>
-              <RiArrowDownSLine className="w-8 h-8 -mt-2" />
-            </Link>
-            <Link href="/contact" className={linkClass("/contact")}>
-              Contact Us
-            </Link>
+          <Link href="/" className={`flex items-center gap-2 ${linkClass("/")}`}>
+  <span>Home</span>
+</Link>
+
+<Link
+  href="/about"
+  className={`flex items-center gap-2 ${linkClass("/about")}`}
+>
+  <span>About Us</span>
+  <RiArrowDownSLine className="w-6 h-6" />
+</Link>
+
+<Link
+  href="/services"
+  className={`flex items-center gap-2 ${linkClass("/services")}`}
+>
+  <span>Services</span>
+  <RiArrowDownSLine className="w-6 h-6" />
+</Link>
+
+<Link href="/contact" className={`flex items-center gap-2 ${linkClass("/contact")}`}>
+  <span>Contact Us</span>
+</Link>
           </div>
 
           <div className="flex items-center gap-8 mx-5 -mt-6">

@@ -292,12 +292,11 @@ export default function Home() {
       </section>
       <section className="relative bg-[url('/images/Small.png')] w-full px-4 py-16 bg-no-repeat bg-cover bg-center">
         <div
-          className={`relative max-w-md ml-auto p-6 rounded-lg mr-4 ${poppins.className}`}
-        >
+          className={`relative max-w-md md:max-w-xl ml-auto md:ml-[60%] p-4 rounded-lg mr-4 ${poppins.className}`} >
           <h2 className="text-2xl font-semibold mb-4 text-white">
             Get in Touch with Us
           </h2>
-          <form action="" className="space-y-4">
+          <form action="" className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-white mb-1">
                 Name
@@ -340,7 +339,7 @@ export default function Home() {
               ></textarea>
             </div>
 
-            <div className="text-white bg-[#037F4D] w-full p-3 text-center rounded-xl">
+            <div className="text-white bg-[#037F4D] w-full p-3 text-center rounded-xl mt-14">
               <button className=" ">Contact Us</button>
             </div>
           </form>

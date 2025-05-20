@@ -283,7 +283,7 @@ export default function About() {
             <div className="flex justify-between">
               <div className="">
                 <h3 className="text-[32px] md:text-[48px] font-semibold">
-                  Management Team
+                  Management team
                 </h3>
               </div>
               <div className="hidden md:flex items-center gap-4">
@@ -309,19 +309,14 @@ export default function About() {
                     <p className="mt-2 text-2xl font-semibold text-black w-full line-clamp-2 text-left">
                       {item.name}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-black w-full line-clamp-2 text-left">
+                    <p className="mt-1 text-sm font-medium text-black w-full line-clamp-2 text-left">
                       {item.title}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-black w-full text-left ">
-                      {item.desc}
-                    </p>
-
-                    <div className="flex items-center gap-2 text-[#037F4D] pt-3 pb-20">
-                      <span className="  border-b-2 border-[#037F4D]">
-                        {item.read}
-                      </span>
-                      <GoArrowRight />
-                    </div>
+                    <p className="line-clamp-3 mt-3">{item.desc}</p>
+                    <div className="flex items-center gap-2 text-[#037F4D] pt-5">
+                  <p className="border-b-2">Read more</p>
+                  <GoArrowRight />
+                </div>
                   </div>
                 ))}
               </div>

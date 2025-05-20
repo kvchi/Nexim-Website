@@ -4,7 +4,6 @@ const managementData = [
         name: "Abubakar A. Bello",
         title: "Managing Director/CEO",
         desc: "Abba has over 30 year's experience in banking, wherehe has held management positions in corporate banking, regional and commercial banking, and public sector banking in more than a decade.",
-        read: "Read more"
     },
     {
         src: "/images/stella.png",
