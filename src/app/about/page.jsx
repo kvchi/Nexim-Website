@@ -6,30 +6,29 @@ import managementData from "@/data/managementData";
 import { Inter } from "next/font/google";
 import { useRef } from "react";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
+
+  const scrollRef = useRef(null);
+
+  const scrollToSection = (id) => {
+    const container = scrollRef.current;
+    const target = document.getElementById(id);
   
-  const contentSectionRef = useRef(null);
-  const scrollToId = (id) => {
-    const contentSection = contentSectionRef.current;
-    if (!contentSection) return;
+    if (container && target) {
+      const containerTop = container.getBoundingClientRect().top;
+      const targetTop = target.getBoundingClientRect().top;
+      const offset = targetTop - containerTop + container.scrollTop - 20; // fine-tune offset as needed
   
-    const targetElement = contentSection.querySelector(`#${id}`);
-    if (!targetElement) {
-      console.warn("Target section not found:", id);
-      return;
+      container.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
     }
-  
-    // Simplified scroll position
-    const scrollPosition = targetElement.offsetTop - 100;
-    console.log('Scrolling to:', id, 'position:', scrollPosition);
-  
-    contentSection.scrollTo({
-      top: scrollPosition,
-      behavior: "smooth",
-    });
   };
+  
   return (
     <main>
       <section className="pt-10 sm:pt-20 md:pt-30 px-4 sm:px-6 md:px-10">
@@ -51,19 +50,17 @@ export default function About() {
           <div className="space-y-3 pt-10 lg:pt-[111px]">
             <h2 className="font-semibold">About Us</h2>
             <ul className="text-[#A39F9F] font-normal text-base sm:text-lg md:text-[20px] space-y-2 cursor-pointer">
-              <li onClick={() => scrollToId('board-members')}>Board members</li>
-              <li onClick={() => scrollToId('management')}>Management Team</li>
-              <li onClick={() => scrollToId('core')}>Core Values</li>
-              <li onClick={() => scrollToId('csb')}>CSB</li>
-              <li onClick={() => scrollToId('development')}>Development Initiative</li>
-              <li onClick={() => scrollToId('test')}>Testimonials</li>
+            <li onClick={() => scrollToSection('board-members')}>Board members</li>
+            <li onClick={() => scrollToSection('management')}>Management Team</li>
+            <li onClick={() => scrollToSection('core')}>Core Values</li>
+            <li onClick={() => scrollToSection('csb')}>CSB</li>
+            <li onClick={() => scrollToSection('development')}>Development Initiative</li>
+            <li onClick={() => scrollToSection('test')}>Testimonials</li>
             </ul>
           </div>
         </section>
-        <section
-        ref={contentSectionRef}
-        className="w-full lg:w-[70%] overflow-y-auto overflow-x-hidden ">
-          <div className="pt-10 lg:pt-[111px]">
+        <section ref={scrollRef} id="scrollable-section" className="w-full lg:w-[70%] h-screen overflow-y-auto relative hide-scrollbar">
+           <div className="pt-10 lg:pt-[111px]">
             <h1 className="font-semibold text-2xl md:text-3xl">
               About NEXIM Bank
             </h1>
@@ -120,8 +117,8 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </div>
-          <aside className="mt-10 border-t border-[#dedede] border-b flex flex-col md:flex-row w-full md:w-[65%] gap-6 md:gap-10 py-10 mb-10">
+          </div> 
+           <aside className="mt-10 border-t border-[#dedede] border-b flex flex-col md:flex-row w-full md:w-[65%] gap-6 md:gap-10 py-10 mb-10">
             <div className="">
               <h2 className="font-semibold text-2xl">Our Mission</h2>
               <p>
@@ -133,8 +130,8 @@ export default function About() {
               <h2 className="font-semibold text-2xl">Our Vision</h2>
               <p>To be the leading Export Development Bank in Africa</p>
             </div>
-          </aside>
-          <div className="py-6 w-full md:w-[70%] space-y-4">
+          </aside> 
+           <div className="py-6 w-full md:w-[70%] space-y-4">
             <h2 className="text-2xl font-semibold">
               Performance Target/Customer Expectation
             </h2>
@@ -169,9 +166,9 @@ export default function About() {
               className="w-full md:w-[70%]"
               alt=""
             />
-          </div>
-          <div ref={contentSectionRef} className="overflow-y-auto h-full">
-          <section id="board-members" className="py-10 w-full md:w-[70%] space-y-12 ">
+          </div> 
+          <section className="">
+          <div id="board-members" className="py-10 w-full md:w-[70%] space-y-12 ">
             <h2 className="text-xl md:text-2xl font-semibold mb-6">
               Board Members
             </h2>
@@ -281,8 +278,8 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </section>
-          <section id="management" className="pt-20">
+          </div>
+          <div id="management" className="pt-20">
             <div className="flex justify-between">
               <div className="">
                 <h3 className="text-[32px] md:text-[48px] font-semibold">
@@ -329,8 +326,8 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </section>
-          <section id="core" className={inter.className}>
+          </div>
+          <div id="core" className={inter.className}>
             <h3 className="text-2xl md:text-[32px] font-semibold">
               Core Values
             </h3>
@@ -464,8 +461,8 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </section>
-          <section id="csb" className="mt-24 w-[70%]">
+          </div>
+          <div id="csb" className="mt-24 w-[70%]">
             <h2 className="text-3xl font-semibold pb-8">
               Corporate Social Responsibility
             </h2>
@@ -498,8 +495,8 @@ export default function About() {
                 line with international best practices.
               </p>
             </div>
-          </section>
-          <section id="development" className="mt-20 w-[70%]">
+          </div>
+          <div id="development" className="mt-20 w-[70%]">
             <h2 className="text-3xl font-semibold pb-8">
               Developmental Initiative
             </h2>
@@ -554,8 +551,8 @@ export default function About() {
                 thereby reducing the incidents of informal trade.
               </p>
             </div>
-          </section>
-          <section id="test" className="pt-20">
+          </div>
+          <div id="test" className="pt-20">
             <div className="flex justify-between">
               <div className="">
                 <h3 className="text-[32px] md:text-[48px] font-semibold">
@@ -592,8 +589,8 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </section>
           </div>
+          </section>
         </section>
       </aside>
     </main>

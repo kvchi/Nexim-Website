@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="relative w-[173px] h-[38px]">
           <img
             src="/images/Logo-1.svg"
-            fill
+           
             className="object-cover"
             alt="logo-1"
           />
